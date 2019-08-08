@@ -15,7 +15,7 @@ const Background = styled.div`
 
 const Chatbox = styled.div`
     position: relative;
-    width: 100%;
+    width: calc(100vw - 215px);
     height: calc(100vh - 40px);
     overflow: auto;
     padding-left: 16px;
@@ -31,10 +31,15 @@ const Username = styled.div`
     color: darkblue;
 `
 
-const Message = styled.div`
+const Messages = styled.div`
     line-height: 20px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+`
+
+const Message = styled.div`
+    word-wrap: break-word;
 `
 
 const Timestamp = styled.div`
@@ -170,10 +175,10 @@ export default class HomePage extends React.Component {
                         return (
                             <Log>
                                 <Username>{log.username}</Username>
-                                <Message>
-                                    <div>{log.message}</div>
+                                <Messages>
+                                    <Message>{log.message}</Message>
                                     <Timestamp>{moment(log.timestamp).format('lll')}</Timestamp>
-                                </Message>
+                                </Messages>
                             </Log>
                         )
                     })}
