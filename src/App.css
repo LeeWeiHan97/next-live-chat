@@ -1,0 +1,25 @@
+.Form {
+  position: fixed;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: papayawhip;
+}
+
+.input {
+  height: 35px !important;
+  width: calc(100vw - 70px) !important;
+  margin-right: 3px;
+}
+
+.input:focus {
+  box-shadow: none !important;
+}
+
+.button {
+  border-radius: none;
+  height: 35px;
+}
